@@ -12,20 +12,25 @@ import PortfRouter from './routes/Portfs.js';
 
 const app = express();
 
-app.use((req, res, next) => {
-	res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:5173'); // Reemplaza con la URL de tu aplicación de React
-	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-	next();
-});
+/* ::CONFIGURE CORS:: */
+const whiteList = [process.env.ORIGIN1, process.env.ORIGIN2];
+
+app.use(
+	cors({
+		origin: function (origin, callback) {
+			if (!origin || whiteList.includes(origin)) {
+				return callback(null, origin);
+			}
+			return callback('Error de CORS origin: ' + origin + 'No autorizado!');
+		},
+	})
+);
 
 // Configurar la ruta de los archivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
 /*::ROUTES::*/
 app.use('/api/portfolio/', PortfRouter);
-
-/* ::CONFIGURE CORS:: */
-app.use(cors());
 
 // Middleware para establecer el encabezado 'Permissions-Policy'
 app.use((req, res, next) => {

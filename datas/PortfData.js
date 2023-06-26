@@ -19,19 +19,19 @@ export const PortfData = {
 	services: [
 		{
 			title: 'Web Developer',
-			icon: 'web.png',
+			icon: 'web2.png',
 		},
 		{
 			title: 'React Developer',
-			icon: 'mobile.png',
+			icon: 'react.png',
 		},
 		{
 			title: 'Backend Developer',
-			icon: 'backend.png',
+			icon: 'api.png',
 		},
 		{
 			title: 'Angular Developer',
-			icon: 'creator.png',
+			icon: 'angular.png',
 		},
 	],
 
@@ -101,8 +101,6 @@ export const PortfData = {
 			points: [
 				'Developing and maintaining web applications using React.js and other related technologies.',
 				'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-				'Implementing responsive design and ensuring cross-browser compatibility.',
-				'Participating in code reviews and providing constructive feedback to other developers.',
 			],
 		},
 		{
@@ -115,8 +113,6 @@ export const PortfData = {
 			points: [
 				'Developing and maintaining web applications using React.js and other related technologies.',
 				'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-				'Implementing responsive design and ensuring cross-browser compatibility.',
-				'Participating in code reviews and providing constructive feedback to other developers.',
 			],
 		},
 		{
@@ -129,8 +125,6 @@ export const PortfData = {
 			points: [
 				'Developing and maintaining web applications using React.js and other related technologies.',
 				'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-				'Implementing responsive design and ensuring cross-browser compatibility.',
-				'Participating in code reviews and providing constructive feedback to other developers.',
 			],
 		},
 		{
@@ -143,8 +137,6 @@ export const PortfData = {
 			points: [
 				'Developing and maintaining web applications using React.js and other related technologies.',
 				'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-				'Implementing responsive design and ensuring cross-browser compatibility.',
-				'Participating in code reviews and providing constructive feedback to other developers.',
 			],
 		},
 	],
