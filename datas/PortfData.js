@@ -1,6 +1,4 @@
 export const PortfData = {
-	//---
-
 	navLinks: [
 		{
 			id: 'about',
