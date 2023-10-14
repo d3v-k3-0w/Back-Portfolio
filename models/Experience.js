@@ -13,7 +13,6 @@ const experienceSchema = new mongoose.Schema({
 	embedId: String,
 	points: {
 		type: [String], // El atributo 'points' es un array de cadenas de texto
-		// Otras opciones y validaciones aquí
 	},
 });
 

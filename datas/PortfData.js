@@ -142,27 +142,19 @@ export const PortfData = {
 	testimonials: [
 		{
 			testimonial:
-				'I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.',
-			name: 'Sara Lee',
-			designation: 'CFO',
-			company: 'Acme Co',
+				'I thought it was impossible to make a really awesome website like this portfolio, but Kerwin proved me wrong.',
+			name: 'Lisa Wang',
+			designation: 'CTO',
+			company: 'Microsoft',
 			image: 'https://randomuser.me/api/portraits/women/4.jpg',
 		},
 		{
 			testimonial:
-				"I've never met a web developer who truly cares about their clients' success like Rick does.",
-			name: 'Chris Brown',
-			designation: 'COO',
-			company: 'DEF Corp',
+				'I have never met a web developer who really cares about the success of his projects like Kerwin does.',
+			name: 'Taylor Joe',
+			designation: 'Soft Architect',
+			company: 'Google',
 			image: 'https://randomuser.me/api/portraits/men/5.jpg',
-		},
-		{
-			testimonial:
-				"After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-			name: 'Lisa Wang',
-			designation: 'CTO',
-			company: '456 Enterprises',
-			image: 'https://randomuser.me/api/portraits/women/6.jpg',
 		},
 	],
 
@@ -186,8 +178,8 @@ export const PortfData = {
 				},
 			],
 			image: 'carrent.png',
-			gitHubImg: 'github.png',
-			source_code_link: 'https://github.com/',
+			hostImg: 'hosting.png',
+			hostLink: 'https://github.com/',
 		},
 		{
 			name: 'Job IT',
@@ -208,8 +200,8 @@ export const PortfData = {
 				},
 			],
 			image: 'jobit.png',
-			gitHubImg: 'github.png',
-			source_code_link: 'https://github.com/',
+			hostImg: 'hosting.png',
+			hostLink: 'https://github.com/',
 		},
 		{
 			name: 'Trip Guide',
@@ -230,8 +222,8 @@ export const PortfData = {
 				},
 			],
 			image: 'tripguide.png',
-			gitHubImg: 'github.png',
-			source_code_link: 'https://github.com/',
+			hostImg: 'hosting.png',
+			hostLink: 'https://github.com/',
 		},
 	],
 };

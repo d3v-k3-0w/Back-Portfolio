@@ -1,8 +1,6 @@
 import mongoose from 'mongoose';
 
 const testimonialSchema = new mongoose.Schema({
-	//--
-
 	testimonial: String,
 	name: String,
 	designation: String,

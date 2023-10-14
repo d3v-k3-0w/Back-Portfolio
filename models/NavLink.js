@@ -1,8 +1,6 @@
 import mongoose from 'mongoose';
 
 const navLinkSchema = new mongoose.Schema({
-	//--
-
 	id: String,
 	title: String,
 });

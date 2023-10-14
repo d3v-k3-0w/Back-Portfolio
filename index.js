@@ -9,6 +9,9 @@ import PortfRouter from './routes/Portfs.js';
 
 const app = express();
 
+/* ::Middleware para analizar el cuerpo de la solicitud como JSON:: */
+app.use(express.json());
+
 /* ::CONFIGURE CORS:: */
 // const whiteList = [process.env.ORIGIN1, process.env.ORIGIN2];
 
@@ -30,7 +33,7 @@ app.use(
 	})
 );
 
-/* ::Configurar la ruta de los archivos estáticos:: */
+/* ::configurar la ruta de los archivos estáticos:: */
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -46,7 +49,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-	res.send('Server is Ready');
+	res.send('Server is ready');
 });
 
 const PORT = process.env.PORT || 5000;

@@ -1,8 +1,6 @@
 import mongoose from 'mongoose';
 
 const technologySchema = new mongoose.Schema({
-	//--
-
 	name: String,
 	icon: String,
 });
