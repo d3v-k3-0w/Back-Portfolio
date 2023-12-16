@@ -90,51 +90,15 @@ export const PortfData = {
 
 	experiences: [
 		{
-			title: 'React.js Developer',
-			company_name: 'Starbucks',
-			icon: 'starbucks.png',
+			title: 'Soldadora Ecommerce',
+			company_name: 'M.B.S',
+			icon: 'sold.png',
 			iconBg: '#383E56',
-			date: 'March 2020 - April 2021',
-			embedId: 'bGR7DAtexPU',
+			date: 'Sep 2021 - Jan 2022',
+			embedId: '8_bxLOjvVXM',
 			points: [
-				'Developing and maintaining web applications using React.js and other related technologies.',
-				'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-			],
-		},
-		{
-			title: 'React Native Developer',
-			company_name: 'Tesla',
-			icon: 'tesla.png',
-			iconBg: '#E6DEDD',
-			date: 'Jan 2021 - Feb 2022',
-			embedId: 'sE_R_qUbUpo',
-			points: [
-				'Developing and maintaining web applications using React.js and other related technologies.',
-				'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-			],
-		},
-		{
-			title: 'Web Developer',
-			company_name: 'Shopify',
-			icon: 'shopify.png',
-			iconBg: '#383E56',
-			date: 'Jan 2022 - Jan 2023',
-			embedId: 'ORvMy0tRNGA',
-			points: [
-				'Developing and maintaining web applications using React.js and other related technologies.',
-				'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-			],
-		},
-		{
-			title: 'Full stack Developer',
-			company_name: 'Meta',
-			icon: 'meta.png',
-			iconBg: '#E6DEDD',
-			date: 'Jan 2023 - Present',
-			embedId: 'rAkYcsf2XGg',
-			points: [
-				'Developing and maintaining web applications using React.js and other related technologies.',
-				'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
+				'Proyecto Web MVC, tiene una Api Rest para cargar las estadisticas del Dashboard que se consume de manera Asyncrona con JQuery Ajax.',
+				'MBS Soldadora es una empresa individual que se dedica a la fabricacion, venta de maquinas y herramientas para soldar.',
 			],
 		},
 	],
