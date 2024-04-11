@@ -10,6 +10,8 @@ const projectSchema = new mongoose.Schema({
 	description: String,
 	tags: [tagSchema], // Atributo de tipo array que contiene objetos del esquema 'tagSchema'
 	image: String,
+	gitHubImg: String,
+	gitHubLink: String,
 	hostImg: String,
 	hostLink: String,
 });

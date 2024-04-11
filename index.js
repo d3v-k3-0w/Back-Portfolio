@@ -9,10 +9,10 @@ import PortfRouter from './routes/Portfs.js';
 
 const app = express();
 
-/* ::Middleware para analizar el cuerpo de la solicitud como JSON:: */
+//++ middleware para analizar el cuerpo de la solicitud como JSON
 app.use(express.json());
 
-/* ::CONFIGURE CORS:: */
+//++ configure cors
 // const whiteList = [process.env.ORIGIN1, process.env.ORIGIN2];
 
 // app.use(
@@ -33,16 +33,16 @@ app.use(
 	})
 );
 
-/* ::configurar la ruta de los archivos estáticos:: */
+//++ configurar la ruta de los archivos estáticos
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-/*::ROUTES::*/
+//++ routes
 app.use('/api/portfolio/', PortfRouter);
 
-/* ::middleware para establecer el encabezado 'Permissions-Policy':: */
+//++ middleware para establecer el encabezado 'Permissions-Policy'
 app.use((req, res, next) => {
 	res.setHeader('Permissions-Policy', '');
 	next();

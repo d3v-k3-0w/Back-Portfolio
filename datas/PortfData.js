@@ -10,7 +10,7 @@ export const PortfData = {
 		},
 		{
 			id: 'contact',
-			title: 'Contactame',
+			title: 'Contácteme',
 		},
 	],
 
@@ -90,15 +90,15 @@ export const PortfData = {
 
 	experiences: [
 		{
-			title: 'Soldadora Ecommerce',
+			title: 'Soldadura E-commerce',
 			company_name: 'M.B.S',
 			icon: 'sold.png',
 			iconBg: '#383E56',
 			date: 'Sep 2021 - Jan 2022',
 			embedId: '8_bxLOjvVXM',
 			points: [
-				'Proyecto Web MVC, tiene una Api Rest para cargar las estadisticas del Dashboard que se consume de manera Asyncrona con JQuery Ajax.',
-				'MBS Soldadora es una empresa individual que se dedica a la fabricacion, venta de maquinas y herramientas para soldar.',
+				'Proyecto Web MVC, tiene una Api Rest para cargar las estadísticas del Dashboard que se consume de manera Asíncrona con JQuery Ajax.',
+				'MBS Soldadura es una empresa individual que se dedica a la fabricación, venta de maquinas y herramientas para soldar.',
 			],
 		},
 	],
@@ -110,7 +110,7 @@ export const PortfData = {
 			name: 'Lisa Wang',
 			designation: 'CTO',
 			company: 'Microsoft',
-			image: 'https://randomuser.me/api/portraits/women/4.jpg',
+			image: '1697247754271-lisa-wang.jpg',
 		},
 		{
 			testimonial:
@@ -118,76 +118,54 @@ export const PortfData = {
 			name: 'Taylor Joe',
 			designation: 'Soft Architect',
 			company: 'Google',
-			image: 'https://randomuser.me/api/portraits/men/5.jpg',
+			image: '1697247684061-taylor-joe.jpg',
 		},
 	],
 
 	projects: [
 		{
-			name: 'Car Rent',
+			name: 'KoBlogs',
 			description:
-				'Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.',
+				'Plataforma basada en mi web personalizada que permite a los usuarios buscar blogs interesantes relacionado con la tecnología. Proporciona una solución conveniente y eficiente para las necesidades de blogging.',
 			tags: [
 				{
-					name: 'react',
-					color: 'blue-text-gradient',
-				},
-				{
-					name: 'mongodb',
+					name: 'VueJs2',
 					color: 'green-text-gradient',
 				},
 				{
-					name: 'tailwind',
-					color: 'pink-text-gradient',
+					name: 'Firebase',
+					color: 'orange-text-gradient',
 				},
 			],
-			image: 'carrent.png',
+			image: 'koblogs.png',
+			gitHubImg: 'github.png',
+			gitHubLink: 'https://github.com/dev-kei-ow/ko-blogs',
 			hostImg: 'hosting.png',
-			hostLink: 'https://github.com/',
+			hostLink: 'https://fireblogsvue-48354.web.app',
 		},
 		{
-			name: 'Job IT',
+			name: 'Movix',
 			description:
-				'Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.',
+				'Explora y encuentra tu próxima película, serie favorita o programas de TV en esta Web que tiene una amplia colección de trailers en alta definición, descubre las últimas tendencias y los estrenos más esperados.',
 			tags: [
 				{
-					name: 'react',
-					color: 'blue-text-gradient',
-				},
-				{
-					name: 'restapi',
+					name: 'ReactJs',
 					color: 'green-text-gradient',
 				},
 				{
-					name: 'scss',
-					color: 'pink-text-gradient',
+					name: 'Redux Toolkit',
+					color: 'orange-text-gradient',
 				},
-			],
-			image: 'jobit.png',
-			hostImg: 'hosting.png',
-			hostLink: 'https://github.com/',
-		},
-		{
-			name: 'Trip Guide',
-			description:
-				'A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.',
-			tags: [
 				{
-					name: 'nextjs',
+					name: 'Api Web',
 					color: 'blue-text-gradient',
 				},
-				{
-					name: 'supabase',
-					color: 'green-text-gradient',
-				},
-				{
-					name: 'css',
-					color: 'pink-text-gradient',
-				},
 			],
-			image: 'tripguide.png',
+			image: 'movix.png',
+			gitHubImg: 'github.png',
+			gitHubLink: 'https://github.com/dev-kei-ow',
 			hostImg: 'hosting.png',
-			hostLink: 'https://github.com/',
+			hostLink: 'https://monokit-reactx-vitejs-04-movix.vercel.app',
 		},
 	],
 };
