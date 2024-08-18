@@ -12,136 +12,136 @@ import nodemailer from 'nodemailer';
 const PortfRouter = Router();
 
 PortfRouter.get('/add-navlinks', async (req, res) => {
-	const createNavLinks = await NavLink.insertMany(PortfData.navLinks);
-	res.send({ createNavLinks });
+  const createNavLinks = await NavLink.insertMany(PortfData.navLinks);
+  res.send({ createNavLinks });
 });
 
 PortfRouter.get('/navlinks', async (req, res) => {
-	const navLinks = await NavLink.find({});
-	res.send(navLinks);
+  const navLinks = await NavLink.find({});
+  res.send(navLinks);
 });
 
 /***/
 
 PortfRouter.get('/add-aboutservices', async (req, res) => {
-	const createServices = await AboutService.insertMany(PortfData.services);
-	res.send({ createServices });
+  const createServices = await AboutService.insertMany(PortfData.services);
+  res.send({ createServices });
 });
 
 PortfRouter.get('/aboutservices', async (req, res) => {
-	const services = await AboutService.find({});
-	res.send(services);
+  const services = await AboutService.find({});
+  res.send(services);
 });
 
 /***/
 
 PortfRouter.get('/add-techs', async (req, res) => {
-	const createTechnologies = await Tech.insertMany(PortfData.technologies);
-	res.send({ createTechnologies });
+  const createTechnologies = await Tech.insertMany(PortfData.technologies);
+  res.send({ createTechnologies });
 });
 
 PortfRouter.get('/techs', async (req, res) => {
-	const technologies = await Tech.find({});
-	res.send(technologies);
+  const technologies = await Tech.find({});
+  res.send(technologies);
 });
 
 /***/
 
 PortfRouter.get('/add-experiences', async (req, res) => {
-	const createExperiences = await Experience.insertMany(PortfData.experiences);
-	res.send({ createExperiences });
+  const createExperiences = await Experience.insertMany(PortfData.experiences);
+  res.send({ createExperiences });
 });
 
 PortfRouter.get('/experiences', async (req, res) => {
-	const experiences = await Experience.find({});
-	res.send(experiences);
+  const experiences = await Experience.find({});
+  res.send(experiences);
 });
 
 /***/
 
 PortfRouter.get('/add-testimonials', async (req, res) => {
-	const createTestimonials = await Feedback.insertMany(PortfData.testimonials);
-	res.send({ createTestimonials });
+  const createTestimonials = await Feedback.insertMany(PortfData.testimonials);
+  res.send({ createTestimonials });
 });
 
 PortfRouter.get('/testimonials', async (req, res) => {
-	const testimonials = await Feedback.find({});
-	res.send(testimonials);
+  const testimonials = await Feedback.find({});
+  res.send(testimonials);
 });
 
 //++ configura la ubicación donde deseas guardar las imágenes
 const storage = multer.diskStorage({
-	destination: (req, file, cb) => {
-		cb(null, 'public/assets/feedback'); // la carpeta de destino
-	},
-	filename: (req, file, cb) => {
-		const filename = `${Date.now()}-${file.originalname}`;
-		cb(null, filename);
-	},
+  destination: (req, file, cb) => {
+    cb(null, 'public/assets/feedback'); // la carpeta de destino
+  },
+  filename: (req, file, cb) => {
+    const filename = `${Date.now()}-${file.originalname}`;
+    cb(null, filename);
+  },
 });
 
 //++ configura multer
 const upload = multer({ storage: storage });
 
 PortfRouter.post('/new-testimonial', upload.single('image'), async (req, res) => {
-	try {
-		//++ obtiene los datos del cuerpo de la solicitud
-		const { testimonial, name, designation, company } = req.body;
+  try {
+    //++ obtiene los datos del cuerpo de la solicitud
+    const { testimonial, name, designation, company } = req.body;
 
-		//++ el nombre del archivo de imagen cargado se encuentra en req.file.filename
-		const image = req.file.filename;
+    //++ el nombre del archivo de imagen cargado se encuentra en req.file.filename
+    const image = req.file.filename;
 
-		//++ crear una instancia del modelo Feedback
-		const newTestimonial = new Feedback({
-			testimonial,
-			name,
-			designation,
-			company,
-			image,
-		});
+    //++ crear una instancia del modelo Feedback
+    const newTestimonial = new Feedback({
+      testimonial,
+      name,
+      designation,
+      company,
+      image,
+    });
 
-		//++ guarda el nuevo testimonio en la base de datos
-		const saveTestimonial = await newTestimonial.save();
+    //++ guarda el nuevo testimonio en la base de datos
+    const saveTestimonial = await newTestimonial.save();
 
-		res.status(201).json(saveTestimonial);
-	} catch (err) {
-		console.error('Error al guardar el testimonio:', err);
-		res.status(500).json({ error: 'No se pudo guardar el testimonio' });
-	}
+    res.status(201).json(saveTestimonial);
+  } catch (err) {
+    console.error('Error al guardar el testimonio:', err);
+    res.status(500).json({ error: 'No se pudo guardar el testimonio' });
+  }
 });
 
 /***/
 
 PortfRouter.get('/add-projects', async (req, res) => {
-	const createProjects = await Work.insertMany(PortfData.projects);
-	res.send({ createProjects });
+  const createProjects = await Work.insertMany(PortfData.projects);
+  res.send({ createProjects });
 });
 
 PortfRouter.get('/projects', async (req, res) => {
-	const projects = await Work.find({});
-	res.send(projects);
+  const projects = await Work.find({});
+  res.send(projects);
 });
 
 /***/
 
 PortfRouter.post('/send', async (req, res) => {
-	const { name, email, message } = req.body;
+  const { name, email, message } = req.body;
 
-	const transport = nodemailer.createTransport({
-		service: 'gmail',
-		auth: {
-			type: 'OAuth2',
-			user: process.env.USER_EMAIL,
-			clientId: process.env.OAUTH_CLIENT_ID,
-			clientSecret: process.env.OAUTH_CLIENT_SECRET,
-			refreshToken: process.env.OAUTH_REFRESH_TOKEN,
-		},
-		tls: {
-			rejectUnauthorized: false, // la configuración de TLS sirve para resolver el error de certificado autofirmado.
-		},
-	});
+  const transport = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      type: 'OAuth2',
+      user: process.env.USER_EMAIL,
+      clientId: process.env.OAUTH_CLIENT_ID,
+      clientSecret: process.env.OAUTH_CLIENT_SECRET,
+      refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+    },
+    tls: {
+      rejectUnauthorized: false, // la configuración de TLS sirve para resolver el error de certificado autofirmado.
+    },
+  });
 
-	const htmlTemplate = `
+  const htmlTemplate = `
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -190,14 +190,14 @@ PortfRouter.post('/send', async (req, res) => {
 </html>
 `;
 
-	await transport.sendMail({
-		from: email,
-		to: process.env.USER_EMAIL, // Change this to your recipient email address
-		subject: 'Nuevo mensaje de tu portfolio',
-		html: htmlTemplate,
-	});
+  await transport.sendMail({
+    from: email,
+    to: process.env.USER_EMAIL, // Change this to your recipient email address
+    subject: 'Nuevo mensaje de tu portfolio',
+    html: htmlTemplate,
+  });
 
-	res.json({ message: 'Mensaje enviado con éxito' });
+  res.json({ message: 'Mensaje enviado con éxito' });
 });
 
 export default PortfRouter;
