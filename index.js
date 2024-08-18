@@ -12,25 +12,11 @@ const app = express();
 //++ middleware para analizar el cuerpo de la solicitud como JSON
 app.use(express.json());
 
-//++ configure cors
-// const whiteList = [process.env.ORIGIN1, process.env.ORIGIN2];
-
-// app.use(
-// 	cors({
-// 		origin: function (origin, callback) {
-// 			if (!origin || whiteList.includes(origin)) {
-// 				return callback(null, origin);
-// 			}
-// 			return callback('Error de CORS origin: ' + origin + 'No autorizado!');
-// 		},
-// 	})
-// );
-
 app.use(
-	cors({
-		credentials: true,
-		origin: 'http://localhost:5173',
-	})
+  cors({
+    credentials: true,
+    origin: process.env.ORIGIN_PROD || process.env.ORIGIN_DEV,
+  })
 );
 
 //++ configurar la ruta de los archivos estáticos
@@ -44,16 +30,16 @@ app.use('/api/portfolio/', PortfRouter);
 
 //++ middleware para establecer el encabezado 'Permissions-Policy'
 app.use((req, res, next) => {
-	res.setHeader('Permissions-Policy', '');
-	next();
+  res.setHeader('Permissions-Policy', '');
+  next();
 });
 
 app.get('/', (req, res) => {
-	res.send('Server is ready');
+  res.send('Server is ready');
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-	console.log(`Server at http://localhost:${PORT}`);
+  console.log(`Server at http://localhost:${PORT}`);
 });
