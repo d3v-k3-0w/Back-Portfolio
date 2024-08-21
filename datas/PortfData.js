@@ -59,10 +59,6 @@ export const PortfData = {
       icon: 'mongodb.png',
     },
     {
-      name: 'Three JS',
-      icon: 'threejs.svg',
-    },
-    {
       name: 'git',
       icon: 'git.png',
     },
