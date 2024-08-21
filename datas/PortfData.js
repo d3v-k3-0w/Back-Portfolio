@@ -54,7 +54,6 @@ export const PortfData = {
       name: 'Tailwind CSS',
       icon: 'tailwind.png',
     },
-
     {
       name: 'MongoDB',
       icon: 'mongodb.png',
