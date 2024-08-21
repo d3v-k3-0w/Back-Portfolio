@@ -51,21 +51,10 @@ export const PortfData = {
       icon: 'typescript.png',
     },
     {
-      name: 'React JS',
-      icon: 'reactjs.png',
-    },
-    {
-      name: 'Redux Toolkit',
-      icon: 'redux.png',
-    },
-    {
       name: 'Tailwind CSS',
       icon: 'tailwind.png',
     },
-    {
-      name: 'Node JS',
-      icon: 'nodejs.png',
-    },
+
     {
       name: 'MongoDB',
       icon: 'mongodb.png',
@@ -77,14 +66,6 @@ export const PortfData = {
     {
       name: 'git',
       icon: 'git.png',
-    },
-    {
-      name: 'figma',
-      icon: 'figma.png',
-    },
-    {
-      name: 'docker',
-      icon: 'docker.png',
     },
   ],
 
