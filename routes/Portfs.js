@@ -139,6 +139,8 @@ PortfRouter.post('/send', async (req, res) => {
     tls: {
       rejectUnauthorized: false, // la configuración de TLS sirve para resolver el error de certificado autofirmado.
     },
+    logger: true,
+    debug: true,
   });
 
   const htmlTemplate = `
@@ -190,12 +192,19 @@ PortfRouter.post('/send', async (req, res) => {
 </html>
 `;
 
-  await transport.sendMail({
-    from: email,
-    to: process.env.USER_EMAIL, // Change this to your recipient email address
-    subject: 'Nuevo mensaje de tu portfolio',
-    html: htmlTemplate,
-  });
+  try {
+    await transport.sendMail({
+      from: email,
+      to: process.env.USER_EMAIL,
+      subject: 'Nuevo mensaje de tu portfolio',
+      html: htmlTemplate,
+    });
+
+    res.json({ message: 'Mensaje enviado con éxito' });
+  } catch (error) {
+    console.error('Error al enviar el correo:', error.message);
+    res.status(500).json({ message: 'Error al enviar el correo' });
+  }
 
   res.json({ message: 'Mensaje enviado con éxito' });
 });
