@@ -201,12 +201,10 @@ PortfRouter.post('/send', async (req, res) => {
     });
 
     res.json({ message: 'Mensaje enviado con éxito' });
-  } catch (error) {
-    console.error('Error al enviar el correo:', error.message);
+  } catch (err) {
+    console.error('Error al enviar el correo:', err.message);
     res.status(500).json({ message: 'Error al enviar el correo' });
   }
-
-  res.json({ message: 'Mensaje enviado con éxito' });
 });
 
 export default PortfRouter;
