@@ -38,6 +38,26 @@ app.get('/', (req, res) => {
   res.send('Server is ready');
 });
 
+//++ función para hacer ping al servidor
+const pingServer = () => {
+  fetch(process.env.BACKEND_URL) // Usa la variable de entorno
+    .then((response) => {
+      if (response.ok) {
+        console.log('Ping enviado al servidor');
+      } else {
+        console.error('Error al hacer ping al servidor');
+      }
+    })
+    .catch((err) => {
+      console.error('Error al enviar ping:', err);
+    });
+};
+
+//++ ping inmediato al iniciar el servidor
+pingServer();
+
+setInterval(pingServer, 840000); // 840000 ms = 14 minutos
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
