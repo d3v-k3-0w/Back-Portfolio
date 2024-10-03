@@ -4,6 +4,7 @@ import express from 'express';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import cors from 'cors';
+import fetch from 'node-fetch';
 
 import PortfRouter from './routes/Portfs.js';
 
@@ -40,7 +41,7 @@ app.get('/', (req, res) => {
 
 //++ función para hacer ping al servidor
 const pingServer = () => {
-  fetch(process.env.BACKEND_URL) // Usa la variable de entorno
+  fetch(process.env.BACKEND_URL)
     .then((response) => {
       if (response.ok) {
         console.log('Ping enviado al servidor');
